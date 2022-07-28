@@ -1,10 +1,10 @@
 package com.bridgelabz.BST;
 
-public class MyBinaryNode<K> {
+public class MyBinaryNode<K extends Comparable> {
     private K key;
-    MyBinaryNode left;
-    MyBinaryNode right;
-    MyBinaryNode p;
+    MyBinaryNode<K> left;
+    MyBinaryNode<K> right;
+    MyBinaryNode<K> p;
 
     public MyBinaryNode(K key) {
         this.key = key;

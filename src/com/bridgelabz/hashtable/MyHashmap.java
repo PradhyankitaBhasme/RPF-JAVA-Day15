@@ -1,6 +1,6 @@
 package com.bridgelabz.hashtable;
 
-public class MyHashmap<K,V> {
+public class MyHashmap<K,V extends Comparable> {
     public static final int numOfBuckets=10;
     LinkedList<K,V>[] myBucketArray;
 
