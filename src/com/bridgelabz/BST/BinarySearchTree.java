@@ -12,11 +12,11 @@ public class BinarySearchTree<K extends Comparable> {
             MyBinaryNode node=root;
 
             while (true){
-                if (node.left==null) {
+                if (node.left==null && myBinaryNode.getKey().compareTo(node.getKey()) <= 0) {
                     node.left=myBinaryNode;
                     System.out.println(myBinaryNode.getKey()+" assigned left to "+node.getKey());
                     break;
-                } else if (myBinaryNode.getKey().compareTo(node.left.getKey()) <= 0) {
+                } else if (myBinaryNode.getKey().compareTo(node.getKey()) <= 0) {
                     node=node.left;
                 } else if (node.right == null) {
                     node.right=myBinaryNode;
@@ -33,6 +33,16 @@ public class BinarySearchTree<K extends Comparable> {
         bst.inset(56);
         bst.inset(30);
         bst.inset(70);
+        bst.inset(22);
+        bst.inset(60);
+        bst.inset(95);
+        bst.inset(40);
+        bst.inset(11);
+        bst.inset(3);
+        bst.inset(16);
+        bst.inset(65);
+        bst.inset(63);
+        bst.inset(67);
 
     }
 }
