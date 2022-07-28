@@ -1,4 +1,4 @@
-package com.bridgelabz.BST;
+package com.bridgelabz.BinarySearchTree;
 
 public class MyBinaryNode<K extends Comparable> {
     private K key;
