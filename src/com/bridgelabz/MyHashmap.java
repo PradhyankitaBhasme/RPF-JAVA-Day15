@@ -36,6 +36,11 @@ public class MyHashmap<K,V> {
             linkedList.print();
         }
     }
+    public void remove(K key){
+        int index=getIndex(key);
+        myBucketArray[index].remove(key);
+        System.out.println("Removed: "+key);
+    }
 
     public static void main(String[] args) {
         MyHashmap<String,Integer> myHashmap=new MyHashmap<>();
@@ -44,6 +49,10 @@ public class MyHashmap<K,V> {
         for (String word : wordArray) {
             myHashmap.put(word, 1);
         }
+        myHashmap.print();
+        System.out.println("**************************");
+
+        myHashmap.remove("avoidable");
         myHashmap.print();
     }
 }
