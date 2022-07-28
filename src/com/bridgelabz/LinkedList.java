@@ -42,14 +42,4 @@ public class LinkedList<K, V> {
             System.out.println("}");
         }
     }
-
-//    public static void main(String[] args) {
-//        LinkedList<MyMapNode, V> linkedList=new LinkedList();
-//        MyMapNode<String, Integer> myMapNode=new MyMapNode<>("ABC",5);
-//        MyMapNode<String, Integer> myMapNode2=new MyMapNode<>("ABCD",6);
-//        linkedList.add(myMapNode);
-//        linkedList.add(myMapNode2);
-//        linkedList.print();
-//    }
-
 }
