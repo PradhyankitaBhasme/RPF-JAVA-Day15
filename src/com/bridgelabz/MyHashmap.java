@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 public class MyHashmap<K,V> {
-    public static final int numOfBuckets=5;
+    public static final int numOfBuckets=10;
     LinkedList<K,V>[] myBucketArray;
 
     public MyHashmap() {
@@ -39,7 +39,7 @@ public class MyHashmap<K,V> {
 
     public static void main(String[] args) {
         MyHashmap<String,Integer> myHashmap=new MyHashmap<>();
-        String sentence="To be or not to be";
+        String sentence="Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         String[] wordArray=sentence.split(" ");
         for (String word : wordArray) {
             myHashmap.put(word, 1);
