@@ -29,6 +29,20 @@ public class LinkedList<K, V> {
 
     }
 
+    public MyMapNode remove(K key){
+        MyMapNode deleteNode=search(key);
+        MyMapNode previousNode=head;
+        if (deleteNode != null){
+            while (!previousNode.getNext().equals(deleteNode)){
+                previousNode=previousNode.getNext();
+            }
+            previousNode.setNext(deleteNode.getNext());
+            return deleteNode;
+        }else {
+            return null;
+        }
+    }
+
     public void print(){
         if (head == null){
             System.out.println("null");
