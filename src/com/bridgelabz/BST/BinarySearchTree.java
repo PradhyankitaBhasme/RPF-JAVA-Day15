@@ -4,26 +4,25 @@ public class BinarySearchTree<K extends Comparable> {
     MyBinaryNode<K> root;
 
     public void inset(K key){
-        MyBinaryNode myBinaryNode=new MyBinaryNode(key);
         if (root == null){
-            root=myBinaryNode;
-            System.out.println(myBinaryNode.getKey()+" assigned to root");
+            root=new MyBinaryNode(key);
+            System.out.println(key+" assigned to root");
         } else {
-            MyBinaryNode node=root;
+            MyBinaryNode currentNode=root;
 
             while (true){
-                if (node.left==null && myBinaryNode.getKey().compareTo(node.getKey()) <= 0) {
-                    node.left=myBinaryNode;
-                    System.out.println(myBinaryNode.getKey()+" assigned left to "+node.getKey());
+                if (currentNode.left==null && key.compareTo(currentNode.getKey()) <= 0) {
+                    currentNode.left=new MyBinaryNode(key);
+                    System.out.println(key+" assigned left to "+currentNode.getKey());
                     break;
-                } else if (myBinaryNode.getKey().compareTo(node.getKey()) <= 0) {
-                    node=node.left;
-                } else if (node.right == null) {
-                    node.right=myBinaryNode;
-                    System.out.println(myBinaryNode.getKey()+" assigned right to "+node.getKey());
+                } else if (key.compareTo(currentNode.getKey()) <= 0) {
+                    currentNode=currentNode.left;
+                } else if (currentNode.right == null) {
+                    currentNode.right=new MyBinaryNode(key);
+                    System.out.println(key+" assigned right to "+currentNode.getKey());
                     break;
                 } else {
-                    node=node.right;
+                    currentNode=currentNode.right;
                 }
             }
         }
