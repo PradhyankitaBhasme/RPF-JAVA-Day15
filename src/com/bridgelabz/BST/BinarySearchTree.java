@@ -1,16 +1,31 @@
 package com.bridgelabz.BST;
 
-public class BinarySearchTree<K> {
-    MyBinaryNode root;
+public class BinarySearchTree<K extends Comparable> {
+    MyBinaryNode<K> root;
 
     public void inset(K key){
-        MyBinaryNode node=new MyBinaryNode(key);
+        MyBinaryNode myBinaryNode=new MyBinaryNode(key);
         if (root == null){
-            root=node;
-        } else if (root.left==null) {
-            root.left=node;
-        }else {
-            root.right=node;
+            root=myBinaryNode;
+            System.out.println(myBinaryNode.getKey()+" assigned to root");
+        } else {
+            MyBinaryNode node=root;
+
+            while (true){
+                if (node.left==null) {
+                    node.left=myBinaryNode;
+                    System.out.println(myBinaryNode.getKey()+" assigned left to "+node.getKey());
+                    break;
+                } else if (myBinaryNode.getKey().compareTo(node.left.getKey()) <= 0) {
+                    node=node.left;
+                } else if (node.right == null) {
+                    node.right=myBinaryNode;
+                    System.out.println(myBinaryNode.getKey()+" assigned right to "+node.getKey());
+                    break;
+                } else {
+                    node=node.right;
+                }
+            }
         }
     }
     public static void main(String[] args) {
@@ -19,9 +34,6 @@ public class BinarySearchTree<K> {
         bst.inset(30);
         bst.inset(70);
 
-        System.out.println("root: "+bst.root.getKey());
-        System.out.println("left: "+bst.root.left.getKey());
-        System.out.println("right: "+bst.root.right.getKey());
     }
 }
 
